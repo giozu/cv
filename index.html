@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giovanni Zullo &mdash; Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4F6F8;--card:#FFFFFF;--ink:#15191F;--prose:var(--prose);--soft:#535b66;--faint:#8a929c;--line:#DDE2E8;--accent:#1366C6;--glow:#2EA6E6;--accent-tint:rgba(19,102,198,.08);--disp:'Space Grotesk',sans-serif;--body:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.6rem clamp(1rem,4vw,3rem);background:rgba(244,246,248,.86);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.topbar .who{font-family:var(--mono);font-size:.78rem;font-weight:600;letter-spacing:.02em}
+.topbar nav{display:flex;gap:.15rem;flex-wrap:wrap;justify-content:flex-end}
+.topbar nav a{font-family:var(--mono);font-size:.7rem;color:var(--soft);padding:.25rem .5rem;border-radius:4px;transition:.15s}
+.topbar nav a:hover{color:var(--accent);background:var(--accent-tint)}
+
+.wrap{max-width:980px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem)}
+
+/* hero */
+.hero{position:relative;padding:clamp(3rem,8vw,6rem) 0 2.5rem;overflow:hidden}
+.hero .motif{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.5;pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.hero h1{font-family:var(--disp);font-weight:600;font-size:clamp(2.8rem,8vw,5rem);line-height:.96;letter-spacing:-.02em}
+.hero .role{font-family:var(--disp);font-weight:400;font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--accent);margin-top:.7rem}
+.hero .loc{font-family:var(--mono);font-size:.78rem;color:var(--soft);margin-top:.5rem;letter-spacing:.02em}
+.summary{font-size:1.18rem;line-height:1.6;max-width:64ch;margin:1.6rem 0 0;color:var(--prose)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.5rem}
+.chip{font-family:var(--mono);font-size:.72rem;font-weight:500;padding:.4rem .7rem;border:1px solid var(--line);
+  border-radius:999px;background:var(--card);transition:.15s;letter-spacing:.01em}
+.chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+
+/* readout */
+.readout{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:1.8rem;padding:1.1rem 1.3rem;background:var(--card);
+  border:1px solid var(--line);border-radius:12px}
+.ro-group{display:flex;flex-direction:column;gap:.3rem}
+.ro-src{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--faint)}
+.ro-item{font-family:var(--mono);font-size:.82rem;color:var(--soft)}
+.ro-item b{color:var(--ink);font-weight:600}
+
+/* sections */
+.section{padding:2.6rem 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:1.4rem}
+.eyebrow{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.18em;color:var(--accent)}
+.sec-head h2{font-family:var(--disp);font-weight:600;font-size:1.7rem;letter-spacing:-.01em;margin-top:.3rem;display:flex;align-items:baseline;gap:.6rem}
+.sec-count{font-family:var(--mono);font-size:.8rem;font-weight:500;color:var(--faint)}
+
+/* entry rows */
+.entry{display:grid;grid-template-columns:160px 1fr;gap:1.2rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.entry:last-child{border-bottom:none}
+.entry-when{font-family:var(--mono);font-size:.74rem;color:var(--soft);padding-top:.2rem;letter-spacing:.01em}
+.entry-title{font-family:var(--disp);font-weight:500;font-size:1.02rem;line-height:1.3}
+.entry-sub{font-family:var(--mono);font-size:.74rem;color:var(--soft);margin-top:.2rem}
+.entry-desc{font-size:1rem;color:var(--prose);margin-top:.5rem;max-width:70ch}
+.entry-note{font-size:.92rem;color:var(--soft);margin-top:.5rem;max-width:70ch}
+.entry-thesis{font-size:.98rem;color:var(--prose);margin-top:.3rem;max-width:74ch}
+.ongoing{color:var(--accent);font-family:var(--mono);font-size:.74rem}
+.tbd{color:var(--faint);font-style:italic}
+
+/* software cards */
+.sw-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.sw-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.3rem 1.4rem;position:relative;overflow:hidden}
+.sw-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--accent),var(--glow))}
+.sw-head{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+.sw-name{font-family:var(--disp);font-weight:700;font-size:1.35rem;letter-spacing:-.01em}
+.sw-meta{font-family:var(--mono);font-size:.68rem;color:var(--soft)}
+.sw-role{font-family:var(--mono);font-size:.7rem;color:var(--accent);margin-top:.2rem;letter-spacing:.02em}
+.sw-desc{font-size:.98rem;color:var(--prose);margin-top:.6rem}
+.sw-hl{font-size:.9rem;color:var(--soft);margin-top:.5rem;font-style:italic}
+.sw-tags{margin-top:.6rem;font-size:.72rem;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem}
+.tag-k{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-right:.2rem}
+.tag{font-family:var(--mono);font-size:.68rem;padding:.12rem .45rem;background:var(--accent-tint);color:var(--accent);border-radius:4px}
+.sw-links{margin-top:.8rem;display:flex;gap:1rem;flex-wrap:wrap}
+
+/* skills */
+.sk-row{display:grid;grid-template-columns:200px 1fr;gap:1rem;padding:.6rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.sk-row:last-child{border-bottom:none}
+.sk-k{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--soft)}
+.sk-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+
+/* publications */
+.pub{display:grid;grid-template-columns:30px 1fr;gap:.8rem;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.pub:last-child{border-bottom:none}
+.pub-num{font-family:var(--mono);font-size:.72rem;color:var(--faint);padding-top:.25rem;text-align:right}
+.pub-title{font-family:var(--disp);font-weight:500;font-size:1.0rem;line-height:1.32}
+.pub-auth{font-size:.92rem;color:var(--soft);margin-top:.2rem}
+.pub-venue{font-family:var(--mono);font-size:.72rem;color:var(--faint);margin-top:.25rem;line-height:1.5}
+.pub-year{color:var(--soft)}
+.doi{color:var(--accent);border-bottom:1px solid var(--accent-tint);transition:.15s}
+.doi:hover{border-bottom-color:var(--accent)}
+.star{color:var(--accent);margin-right:.35rem}
+.pub-type{font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);
+  border:1px solid var(--accent-tint);padding:.05rem .35rem;border-radius:4px;margin-left:.3rem;vertical-align:middle}
+.subhead{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.14em;color:var(--soft);margin:1.6rem 0 .4rem}
+.subhead:first-child{margin-top:0}
+
+footer{padding:2.5rem 0 4rem;border-top:1px solid var(--line);font-family:var(--mono);font-size:.7rem;color:var(--faint)}
+
+/* reveal */
+.section,.hero-inner{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-inner{animation-delay:.05s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.section,.hero-inner{animation:none;opacity:1;transform:none}
+  .bubble{animation:none !important}}
+
+@media(max-width:720px){
+  .entry{grid-template-columns:1fr;gap:.3rem}
+  .entry-when{padding-top:0}
+  .sw-grid{grid-template-columns:1fr}
+  .sk-row{grid-template-columns:1fr;gap:.3rem}
+  .topbar nav{display:none}
+  body{font-size:16px}
+}
+
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="who">G. ZULLO</span>
+  <nav><a href="#profile">Profile</a><a href="#background">Background</a><a href="#software">Software</a><a href="#methods">Methods</a><a href="#funding">Funding</a><a href="#projects">Projects</a><a href="#selected">Selected</a><a href="#publications">Publications</a><a href="#talks">Talks</a><a href="#teaching">Teaching</a><a href="#supervision">Supervision</a><a href="#service">Service</a></nav>
+</div>
+
+<div class="wrap">
+  <header class="hero" id="profile">
+    <svg class="motif" viewBox="0 0 980 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="core" cx="78%" cy="28%" r="55%">
+          <stop offset="0%" stop-color="#2EA6E6" stop-opacity=".18"/>
+          <stop offset="55%" stop-color="#1366C6" stop-opacity=".05"/>
+          <stop offset="100%" stop-color="#1366C6" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="980" height="460" fill="url(#core)"/>
+      <g stroke="#1366C6" stroke-opacity=".22" fill="none" stroke-width="1">
+        <polygon points="120,40 260,20 320,150 210,240 80,200 40,110"/>
+        <polygon points="320,150 260,20 460,30 540,140 440,220 210,240"/>
+        <polygon points="540,140 460,30 660,60 720,180 600,250 440,220"/>
+        <polygon points="720,180 660,60 880,90 940,230 800,300 600,250"/>
+        <polygon points="210,240 440,220 480,360 300,420 120,360"/>
+        <polygon points="440,220 600,250 660,400 480,360"/>
+        <polygon points="600,250 800,300 860,440 660,400"/>
+      </g>
+      <g fill="#1366C6">
+        <circle class="bubble" cx="260" cy="20" r="3.2" fill-opacity=".5"/>
+        <circle class="bubble" cx="540" cy="140" r="4" fill-opacity=".45"/>
+        <circle class="bubble" cx="440" cy="220" r="3.5" fill-opacity=".5"/>
+        <circle class="bubble" cx="660" cy="60" r="3" fill-opacity=".4"/>
+        <circle class="bubble" cx="600" cy="250" r="4.2" fill-opacity=".45"/>
+        <circle class="bubble" cx="210" cy="240" r="3.2" fill-opacity=".4"/>
+        <circle class="bubble" cx="480" cy="360" r="3.6" fill-opacity=".5"/>
+        <circle class="bubble" cx="800" cy="300" r="3" fill-opacity=".4"/>
+      </g>
+    </svg>
+    <div class="hero-inner">
+      <h1>Giovanni&nbsp;Zullo</h1>
+      <div class="role">Nuclear fuel modelling &middot; multi-physics FEM simulation &middot; open-source code development</div>
+      <div class="loc">Research assistant (Assegno di Ricerca) &mdash; Milan, Italy</div>
+      <p class="summary">Postdoctoral researcher in nuclear engineering working on the multi-scale, multi-physics modelling and simulation of nuclear fuel behaviour. My research bridges two complementary directions: finite-element, multi-physics simulation of the coupled thermo-mechanical and damage behaviour of nuclear fuel — as main developer and maintainer of the open-source Z3ST framework — and physics-based modelling of gaseous and volatile fission-product behaviour, through the open-source SCIANTIX code, coupled to fuel performance codes such as TRANSURANUS, OFFBEAT and FRAPCON/FRAPTRAN. My approach centres on model development, numerical simulation, and rigorous verification, validation and uncertainty quantification (VVUQ) for fuel safety analysis under nominal, off-normal and accidental conditions, across Gen-III light water reactors and Gen-IV fast reactor systems.</p>
+      <div class="chips"><a class="chip" href="mailto:giovanni.zullo@polimi.it"><span class="chip-k">giovanni.zullo@polimi.it</span></a><a class="chip" href="https://orcid.org/0000-0002-9139-2454"><span class="chip-k">ORCID</span></a><a class="chip" href="https://scholar.google.com/citations?user=ORUeAQ4AAAAJ"><span class="chip-k">Scholar</span></a><a class="chip" href="https://www.scopus.com/authid/detail.uri?authorId=57343516300"><span class="chip-k">Scopus</span></a><a class="chip" href="https://www.researchgate.net/profile/Giovanni-Zullo-2"><span class="chip-k">ResearchGate</span></a><a class="chip" href="https://github.com/giozu"><span class="chip-k">GitHub</span></a><a class="chip" href="https://www.linkedin.com/in/giovanni-zullo-32b081165/"><span class="chip-k">LinkedIn</span></a></div>
+      
+<div class="readout">
+  <div class="ro-group">
+    <span class="ro-src">Google Scholar</span>
+    <span class="ro-item"><b>269</b> citations</span>
+    <span class="ro-item"><b>11</b> h-index</span>
+    <span class="ro-item"><b>12</b> i10</span>
+  </div>
+  <div class="ro-group">
+    <span class="ro-src">Scopus</span>
+    <span class="ro-item"><b>132</b> citations</span>
+    <span class="ro-item"><b>8</b> h-index</span>
+    <span class="ro-item"><b>22</b> docs</span>
+  </div>
+  <div class="ro-group">
+    <span class="ro-src">Output</span>
+    <span class="ro-item"><b>22</b> journal articles</span>
+    <span class="ro-item"><b>7</b> first-author</span>
+  </div>
+</div>
+    </div>
+  </header>
+
+  
+<section id="background" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">01 / positions</span>
+    <h2>Current position &amp; education</h2>
+  </div>
+  <div class="sec-body">
+<div class="entry">
+  <div class="entry-when">Apr 2024 – Present</div>
+  <div class="entry-body">
+    <div class="entry-title">Research assistant (Assegno di Ricerca)</div>
+    <div class="entry-sub">Department of Energy, Politecnico di Milano · Nuclear Reactors Group</div>
+    <p class="entry-desc">Multi-scale, multi-physics modelling and simulation of nuclear fuel rod behaviour: development of numerical algorithms and physics-based models, finite-element simulation of coupled thermo-mechanical and damage behaviour, and verification, validation and uncertainty quantification of computer codes for fuel safety analysis under nominal, off-normal and accidental conditions.</p>
+    <div class="entry-note">Main developer and maintainer of the Z3ST and SCIANTIX open-source codes. Active collaborations: JRC-Karlsruhe (TRANSURANUS), CIEMAT (FRAPCON / FRAPTRAN), ASNR (MFPR-F), EPFL (OFFBEAT)</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Nov 2020 – Oct 2024</div>
+  <div class="entry-body">
+    <div class="entry-title">PhD &mdash; Energy and Nuclear Science and Technology</div>
+    <div class="entry-sub">Politecnico di Milano</div>
+    <div class="entry-thesis">Development and assessment of an open-source code for gaseous and volatile fission product behaviour in light water reactor fuel &middot; <a class="doi" href="https://hdl.handle.net/10589/228452">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Sep 2017 – Oct 2020</div>
+  <div class="entry-body">
+    <div class="entry-title">MSc &mdash; Nuclear Engineering</div>
+    <div class="entry-sub">Politecnico di Milano</div>
+    <div class="entry-thesis">Modelling and assessment of the release of gaseous and volatile fission products from oxide fuel &middot; <a class="doi" href="https://hdl.handle.net/10589/166790">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Sep 2013 – Sep 2017</div>
+  <div class="entry-body">
+    <div class="entry-title">BSc &mdash; Ingegneria Fisica</div>
+    <div class="entry-sub">Politecnico di Milano</div>
+    <div class="entry-thesis">Studio teorico e modellistico dei fasci di Airy: self-bending e proprietà balistiche</div>
+  </div>
+</div></div>
+</section>
+  
+<section id="software" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">02 / open source</span>
+    <h2>Software</h2>
+  </div>
+  <div class="sec-body"><div class="sw-grid">
+<div class="sw-card">
+  <div class="sw-head"><span class="sw-name">Z3ST</span><span class="sw-meta">Python (FEniCSx) · Apache 2.0 license</span></div>
+  <div class="sw-role">Main developer and maintainer</div>
+  <p class="sw-desc">Open-source FEniCSx framework for finite-element, multi-physics simulation of the coupled thermo-mechanical and damage behaviour of nuclear fuel (© Politecnico di Milano, Nuclear Reactors Group).</p>
+  <p class="sw-hl">Finite element methods for thermo-mechanical analysis and damage modelling</p>
+  <div class="sw-links"><a class="doi" href="https://doi.org/10.5281/zenodo.17748028">doi:10.5281/zenodo.17748028</a> <a class="doi" href="https://github.com/giozu/z3st">repository</a></div>
+</div>
+<div class="sw-card">
+  <div class="sw-head"><span class="sw-name">SCIANTIX</span><span class="sw-meta">C++ · MIT license</span></div>
+  <div class="sw-role">Main developer and maintainer</div>
+  <p class="sw-desc">Open-source grain-scale code for the mechanistic simulation of inert fission gases and volatile fission products in oxide nuclear fuels (© Politecnico di Milano, Nuclear Reactors Group).</p>
+  <p class="sw-hl">Physics-based fission gas behaviour models; adopted in the OECD/NEA Burst-FGR benchmark and by external institutions (EPFL, CIEMAT, JRC)</p><div class="sw-tags"><span class="tag-k">coupled with</span> <span class="tag">TRANSURANUS</span> <span class="tag">OFFBEAT</span> <span class="tag">FRAPCON</span> <span class="tag">FRAPTRAN</span> <span class="tag">Z3ST</span></div><div class="sw-tags"><span class="tag-k">used in</span> <span class="tag">OperaHPC</span> <span class="tag">R2CA</span> <span class="tag">PATRICIA</span> <span class="tag">TRANSPARANT</span></div>
+  <div class="sw-links"><a class="doi" href="https://doi.org/10.5281/zenodo.17748425">doi:10.5281/zenodo.17748425</a> <a class="doi" href="https://github.com/sciantix/sciantix-official">repository</a></div>
+</div></div></div>
+</section>
+  
+<section id="methods" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">03 / toolkit</span>
+    <h2>Methods &amp; tools</h2>
+  </div>
+  <div class="sec-body"><div class="sk-row"><span class="sk-k">Programming</span><span class="sk-tags"><span class="tag">C/C++</span> <span class="tag">Fortran</span> <span class="tag">MATLAB</span> <span class="tag">Python</span> <span class="tag">R</span> <span class="tag">LaTeX</span></span></div><div class="sk-row"><span class="sk-k">Fuel performance</span><span class="sk-tags"><span class="tag">TRANSURANUS</span> <span class="tag">FRAPCON</span> <span class="tag">FRAPTRAN</span> <span class="tag">OFFBEAT</span></span></div><div class="sk-row"><span class="sk-k">Neutronics</span><span class="sk-tags"><span class="tag">SERPENT (Monte Carlo)</span> <span class="tag">OpenMC</span></span></div><div class="sk-row"><span class="sk-k">CFD</span><span class="sk-tags"><span class="tag">OpenFOAM</span></span></div><div class="sk-row"><span class="sk-k">Fission gas behaviour</span><span class="sk-tags"><span class="tag">SCIANTIX</span> <span class="tag">MFPR-F</span></span></div><div class="sk-row"><span class="sk-k">Thermo-mechanics</span><span class="sk-tags"><span class="tag">Z3ST</span> <span class="tag">OFFBEAT</span> <span class="tag">ABAQUS</span> <span class="tag">ANSYS</span></span></div><div class="sk-row"><span class="sk-k">Finite element</span><span class="sk-tags"><span class="tag">FEniCSx</span> <span class="tag">Z3ST</span></span></div><div class="sk-row"><span class="sk-k">Microstructure generation</span><span class="sk-tags"><span class="tag">Mérope</span></span></div><div class="sk-row"><span class="sk-k">Ion–matter interaction</span><span class="sk-tags"><span class="tag">SRIM</span></span></div></div>
+</section>
+  
+<section id="funding" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">04 / funding &amp; mobility</span>
+    <h2>Grants, fellowships &amp; research stays</h2>
+  </div>
+  <div class="sec-body">
+<div class="entry">
+  <div class="entry-when">Feb–Mar 2024</div>
+  <div class="entry-body">
+    <div class="entry-title">ENEN2plus Mobility Grant</div>
+    <div class="entry-sub">European Union (Euratom) — ENEN2plus project · HORIZON-EURATOM-2021-NRT-01-13, GA 101061677</div>
+    <div class="entry-thesis">Research mobility to EPFL (contribution to OperaHPC Tasks 4.2, 4.4, 5.2)</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Feb–Mar 2024</div>
+  <div class="entry-body">
+    <div class="entry-title">EPFL</div>
+    <div class="entry-sub">ENEN2plus mobility grant (HORIZON-EURATOM-2021-NRT-01-13, 101061677, EU-funded)</div>
+    <div class="entry-thesis">Contribution to OperaHPC project, Tasks 4.2, 4.4 and 5.2</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Oct 2023</div>
+  <div class="entry-body">
+    <div class="entry-title">EPFL</div>
+    <div class="entry-sub">OperaHPC project</div>
+    <div class="entry-thesis">Coupling and assessment of SCIANTIX 2.0 with OFFBEAT</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Sep–Dec 2022</div>
+  <div class="entry-body">
+    <div class="entry-title">CIEMAT (Madrid)</div>
+    <div class="entry-sub">R2CA project</div>
+    <div class="entry-thesis">Coupling and assessment of SCIANTIX 2.0 with FRAPCON and FRAPTRAN</div>
+  </div>
+</div></div>
+</section>
+  
+<section id="projects" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">05 / projects</span>
+    <h2>Research projects<span class="sec-count">6</span></h2>
+  </div>
+  <div class="sec-body">
+<div class="entry">
+  <div class="entry-when">NEO4MAT</div>
+  <div class="entry-body">
+    <div class="entry-title">Development of EMMO-based application ontologies for nuclear materials, including data virtualisation, supporting Generation IV reactor technologies <a class="doi" href="https://www.connect-nm.eu/">link</a></div>
+    <div class="entry-sub">CONNECT-NM (Euratom)</div>
+    <div class="entry-thesis">Participant</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">TRANSPARANT</div>
+  <div class="entry-body">
+    <div class="entry-title">Technological Research Action Necessary for Safe Partitioning And Nuclear Transmutation <a class="doi" href="https://cordis.europa.eu/project/id/101166386">link</a></div>
+    <div class="entry-sub">Horizon Europe · 2024-2028</div>
+    <div class="entry-thesis">Task leader (Task 4.3: Validation of the new version of FPCs on previous irradiation experiments)</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">OperaHPC</div>
+  <div class="entry-body">
+    <div class="entry-title">Open-source high-performance computing platforms for high-fidelity, multi-scale, 3D thermo-mechanical fuel element simulation with material microstructure behaviour <a class="doi" href="https://cordis.europa.eu/project/id/101061453">link</a></div>
+    <div class="entry-sub">Horizon Europe · 2022-2027</div>
+    <div class="entry-thesis">Participant</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">PATRICIA</div>
+  <div class="entry-body">
+    <div class="entry-title">Safety-related behaviour of Americium-bearing oxide fuels under normal operating, off-normal and accidental scenarios <a class="doi" href="https://cordis.europa.eu/project/id/945077">link</a></div>
+    <div class="entry-sub">Horizon 2020 · 2020-2024</div>
+    <div class="entry-thesis">Participant</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">R2CA</div>
+  <div class="entry-body">
+    <div class="entry-title">Harmonized methodologies, management approach, and safety tools for evaluation and reduction of radiological consequences of accidents <a class="doi" href="https://cordis.europa.eu/project/id/847656">link</a></div>
+    <div class="entry-sub">Horizon 2020 · 2019-2023</div>
+    <div class="entry-thesis">Participant</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">NEA-bFGR</div>
+  <div class="entry-body">
+    <div class="entry-title">Burst Fission Gas Release (FGR) Benchmark of the Expert Group on Reactor Fuel Performance (EGRFP) <a class="doi" href="https://www.oecd-nea.org/jcms/pl_70791/burst-fission-gas-release-fgr-benchmark-of-the-expert-group-on-reactor-fuel-performance-egrfp">link</a></div>
+    <div class="entry-sub">OECD/NEA</div>
+    <div class="entry-thesis">Participant — Italian representative</div>
+  </div>
+</div></div>
+</section>
+  
+<section id="selected" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">06 / highlights</span>
+    <h2>Selected publications<span class="sec-count">5</span></h2>
+  </div>
+  <div class="sec-body">
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>Two-phase modelling for fission gas sweeping in restructuring nuclear oxide fuel </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Scolaro, A., Barani, T., Pizzocri, D.</div>
+    <div class="pub-venue">Nuclear Engineering and Design &middot; 429, 113602 &middot; <span class="pub-year">2024</span> <a class="doi" href="https://doi.org/10.1016/j.nucengdes.2024.113602">doi:10.1016/j.nucengdes.2024.113602</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>Integral-scale validation of the SCIANTIX code for Light Water Reactor fuel rods </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Scolaro, A., Van Uffelen, P., Feria, F., Herranz, L. E., Luzzi, L.</div>
+    <div class="pub-venue">Journal of Nuclear Materials &middot; 601, 155305 &middot; <span class="pub-year">2024</span> <a class="doi" href="https://doi.org/10.1016/j.jnucmat.2024.155305">doi:10.1016/j.jnucmat.2024.155305</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>Towards simulations of fuel rod behaviour during severe accidents by coupling TRANSURANUS with SCIANTIX and MFPR-F </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L., Kremer, F., Dubourg, R., Schubert, A., Van Uffelen, P.</div>
+    <div class="pub-venue">Annals of Nuclear Energy &middot; 190, 109891 &middot; <span class="pub-year">2023</span> <a class="doi" href="https://doi.org/10.1016/j.anucene.2023.109891">doi:10.1016/j.anucene.2023.109891</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>The SCIANTIX code for fission gas behaviour: status, upgrades, separate-effect validation, and future developments </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L.</div>
+    <div class="pub-venue">Journal of Nuclear Materials &middot; 587, 154744 &middot; <span class="pub-year">2023</span> <a class="doi" href="https://doi.org/10.1016/j.jnucmat.2023.154744">doi:10.1016/j.jnucmat.2023.154744</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>Towards grain-scale modelling of the release of radioactive fission gas from oxide fuel. Part I: SCIANTIX </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Magni, A., Van Uffelen, P., Schubert, A., Luzzi, L.</div>
+    <div class="pub-venue">Nuclear Engineering and Technology &middot; 54 (8), pp. 2771-2782 &middot; <span class="pub-year">2022</span> <a class="doi" href="https://doi.org/10.1016/j.net.2022.02.011">doi:10.1016/j.net.2022.02.011</a></div>
+  </div>
+</div></div>
+</section>
+  
+<section id="publications" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">07 / record</span>
+    <h2>Publications</h2>
+  </div>
+  <div class="sec-body"><div class="subhead">Peer-reviewed journal articles</div>
+<div class="pub">
+  <span class="pub-num">22</span>
+  <div class="pub-body">
+    <div class="pub-title">An AI-enhanced model of athermal fission gas release in SCIANTIX </div>
+    <div class="pub-auth">Pagani, A., Pizzocri, D., <strong>Zullo, G.</strong>, Van Uffelen, P., Luzzi, L.</div>
+    <div class="pub-venue">Journal of Nuclear Materials &middot; 156748 &middot; <span class="pub-year">2026</span> <a class="doi" href="https://doi.org/10.1016/j.jnucmat.2026.156748">doi:10.1016/j.jnucmat.2026.156748</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">21</span>
+  <div class="pub-body">
+    <div class="pub-title">Accelerating thermochemistry in MOX fuel modelling via neural-network surrogates of CALPHAD calculations: Integration into SCIANTIX </div>
+    <div class="pub-auth">Nicodemo, G., Guéneau, C., Fossati, P. C. M., <strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L.</div>
+    <div class="pub-venue">Computational Materials Science &middot; 269, 114607 &middot; <span class="pub-year">2026</span> <a class="doi" href="https://doi.org/10.1016/j.commatsci.2026.114607">doi:10.1016/j.commatsci.2026.114607</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">20</span>
+  <div class="pub-body">
+    <div class="pub-title">Improved reduced order modelling for time-dependent fission gas diffusion in columnar grains tailored for fuel performance applications </div>
+    <div class="pub-auth">Di Gennaro, M., Pizzocri, D., Silva, F. A. B., <strong>Zullo, G.</strong>, Lorenzi, S., Cammi, A., Luzzi, L.</div>
+    <div class="pub-venue">Nuclear Engineering and Technology &middot; 58 (6), 104178 &middot; <span class="pub-year">2026</span> <a class="doi" href="https://doi.org/10.1016/j.net.2026.104178">doi:10.1016/j.net.2026.104178</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">19</span>
+  <div class="pub-body">
+    <div class="pub-title">On a physics-based model of grain-boundary bubbles overpressurisation and its effects on fuel fragmentation </div>
+    <div class="pub-auth">Cappellari, E., Pizzocri, D., <strong>Zullo, G.</strong>, Deanesi, S., Luzzi, L.</div>
+    <div class="pub-venue">Journal of Nuclear Materials &middot; 617, 156116 &middot; <span class="pub-year">2025</span> <a class="doi" href="https://doi.org/10.1016/j.jnucmat.2025.156116">doi:10.1016/j.jnucmat.2025.156116</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">18</span>
+  <div class="pub-body">
+    <div class="pub-title">Data assimilation for accelerated development of fuel performance codes: Towards automatic implementation of material properties correlations </div>
+    <div class="pub-auth">Nicodemo, G., <strong>Zullo, G.</strong>, Cammi, A., Luzzi, L., Pizzocri, D.</div>
+    <div class="pub-venue">Journal of Nuclear Materials &middot; 587, 155954 &middot; <span class="pub-year">2025</span> <a class="doi" href="https://doi.org/10.1016/j.jnucmat.2025.155954">doi:10.1016/j.jnucmat.2025.155954</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">17</span>
+  <div class="pub-body">
+    <div class="pub-title">A multi-fidelity multi-scale methodology to accelerate development of fuel performance codes </div>
+    <div class="pub-auth">Pizzocri, D., <strong>Zullo, G.</strong>, Petrosillo, G., Luzzi, L., Feria, F., Herranz, L. E.</div>
+    <div class="pub-venue">Nuclear Engineering and Design &middot; 432, 113741 &middot; <span class="pub-year">2025</span> <a class="doi" href="https://doi.org/10.1016/j.nucengdes.2024.113741">doi:10.1016/j.nucengdes.2024.113741</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">16</span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>Two-phase modelling for fission gas sweeping in restructuring nuclear oxide fuel </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Scolaro, A., Barani, T., Pizzocri, D.</div>
+    <div class="pub-venue">Nuclear Engineering and Design &middot; 429, 113602 &middot; <span class="pub-year">2024</span> <a class="doi" href="https://doi.org/10.1016/j.nucengdes.2024.113602">doi:10.1016/j.nucengdes.2024.113602</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">15</span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>Integral-scale validation of the SCIANTIX code for Light Water Reactor fuel rods </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Scolaro, A., Van Uffelen, P., Feria, F., Herranz, L. E., Luzzi, L.</div>
+    <div class="pub-venue">Journal of Nuclear Materials &middot; 601, 155305 &middot; <span class="pub-year">2024</span> <a class="doi" href="https://doi.org/10.1016/j.jnucmat.2024.155305">doi:10.1016/j.jnucmat.2024.155305</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">14</span>
+  <div class="pub-body">
+    <div class="pub-title">Consideration of Cr-doped UO2 fuel performance for a Fluoride-Cooled High Temperature Reactor concept </div>
+    <div class="pub-auth">de Lara, A., Van Uffelen, P., Nicodemo, G., <strong>Zullo, G.</strong>, Pizzocri, D., Shwageraus, E.</div>
+    <div class="pub-venue">Annals of Nuclear Energy &middot; 209, 110820 &middot; <span class="pub-year">2024</span> <a class="doi" href="https://doi.org/10.1016/j.anucene.2024.110820">doi:10.1016/j.anucene.2024.110820</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">13</span>
+  <div class="pub-body">
+    <div class="pub-title">Chromia-doped UO2 fuel: An engineering model for chromium solubility and fission gas diffusivity </div>
+    <div class="pub-auth">Nicodemo, G., <strong>Zullo, G.</strong>, Cappia, F., Van Uffelen, P., de Lara, A., Luzzi, L., Pizzocri, D.</div>
+    <div class="pub-venue">Journal of Nuclear Materials &middot; 601, 155301 &middot; <span class="pub-year">2024</span> <a class="doi" href="https://doi.org/10.1016/j.jnucmat.2024.155301">doi:10.1016/j.jnucmat.2024.155301</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">12</span>
+  <div class="pub-body">
+    <div class="pub-title">Towards modelling defective fuel rods in TRANSURANUS: Benchmark and assessment of gaseous and volatile radioactive fission product release </div>
+    <div class="pub-auth">Giaccardi, L., Cherubini, M., <strong>Zullo, G.</strong>, Pizzocri, D., Magni, A., Luzzi, L.</div>
+    <div class="pub-venue">Annals of Nuclear Energy &middot; 197, 110249 &middot; <span class="pub-year">2024</span> <a class="doi" href="https://doi.org/10.1016/j.anucene.2023.110249">doi:10.1016/j.anucene.2023.110249</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">11</span>
+  <div class="pub-body">
+    <div class="pub-title">Performance analysis and helium behaviour of Am-bearing fuel pins for irradiation in the MYRRHA reactor </div>
+    <div class="pub-auth">Luzzi, L., Magni, A., Billiet, S., Di Gennaro, M., Leinders, G., Mariano, L. G., Pizzocri, D., Zanetti, M., <strong>Zullo, G.</strong></div>
+    <div class="pub-venue">Nuclear Engineering and Design &middot; 420, 113048 &middot; <span class="pub-year">2024</span> <a class="doi" href="https://doi.org/10.1016/j.nucengdes.2024.113048">doi:10.1016/j.nucengdes.2024.113048</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">10</span>
+  <div class="pub-body">
+    <div class="pub-title">Addendum to [Giaccardi et al., 2024]: On the definition of the escape rate coefficient </div>
+    <div class="pub-auth">Pizzocri, D., Giaccardi, L., Cherubini, M., <strong>Zullo, G.</strong>, Luzzi, L., Van Uffelen, P., Veshchunov, M.</div>
+    <div class="pub-venue">Annals of Nuclear Energy &middot; 208, 110737 &middot; <span class="pub-year">2024</span> <a class="doi" href="https://doi.org/10.1016/j.anucene.2024.110737">doi:10.1016/j.anucene.2024.110737</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">9</span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>Towards simulations of fuel rod behaviour during severe accidents by coupling TRANSURANUS with SCIANTIX and MFPR-F </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L., Kremer, F., Dubourg, R., Schubert, A., Van Uffelen, P.</div>
+    <div class="pub-venue">Annals of Nuclear Energy &middot; 190, 109891 &middot; <span class="pub-year">2023</span> <a class="doi" href="https://doi.org/10.1016/j.anucene.2023.109891">doi:10.1016/j.anucene.2023.109891</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">8</span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>The SCIANTIX code for fission gas behaviour: status, upgrades, separate-effect validation, and future developments </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L.</div>
+    <div class="pub-venue">Journal of Nuclear Materials &middot; 587, 154744 &middot; <span class="pub-year">2023</span> <a class="doi" href="https://doi.org/10.1016/j.jnucmat.2023.154744">doi:10.1016/j.jnucmat.2023.154744</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">7</span>
+  <div class="pub-body">
+    <div class="pub-title">A surrogate model for the helium production rate in fast reactor MOX fuels </div>
+    <div class="pub-auth">Pizzocri, D., Katsampiris, M. G., Luzzi, L., Magni, A., <strong>Zullo, G.</strong></div>
+    <div class="pub-venue">Nuclear Engineering and Technology &middot; 55 (8), pp. 3071-3079 &middot; <span class="pub-year">2023</span> <a class="doi" href="https://doi.org/10.1016/j.net.2023.04.044">doi:10.1016/j.net.2023.04.044</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">6</span>
+  <div class="pub-body">
+    <div class="pub-title">Analysis of the performance of driver MOX fuel in the MYRRHA reactor under Beam Power Jump transient irradiation conditions </div>
+    <div class="pub-auth">Magni, A., Di Gennaro, M., Guizzardi, E., Pizzocri, D., <strong>Zullo, G.</strong>, Luzzi, L.</div>
+    <div class="pub-venue">Nuclear Engineering and Design &middot; 414, 112589 &middot; <span class="pub-year">2023</span> <a class="doi" href="https://doi.org/10.1016/j.nucengdes.2023.112589">doi:10.1016/j.nucengdes.2023.112589</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">5</span>
+  <div class="pub-body">
+    <div class="pub-title">Reduced order modelling of fission gas diffusion in fast reactors </div>
+    <div class="pub-auth">Pizzocri, D., Di Gennaro, M., Barani, T., Silva, F. A. B., <strong>Zullo, G.</strong>, Lorenzi, S., Cammi, A.</div>
+    <div class="pub-venue">Nuclear Engineering and Technology &middot; 55 (11), pp. 3983-3995 &middot; <span class="pub-year">2023</span> <a class="doi" href="https://doi.org/10.1016/j.net.2023.07.013">doi:10.1016/j.net.2023.07.013</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">4</span>
+  <div class="pub-body">
+    <div class="pub-title">Towards grain-scale modelling of the release of radioactive fission gas from oxide fuel. Part II: Coupling SCIANTIX with TRANSURANUS </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Magni, A., Van Uffelen, P., Schubert, A., Luzzi, L.</div>
+    <div class="pub-venue">Nuclear Engineering and Technology &middot; 54 (12), pp. 4460-4473 &middot; <span class="pub-year">2022</span> <a class="doi" href="https://doi.org/10.1016/j.net.2022.07.018">doi:10.1016/j.net.2022.07.018</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">3</span>
+  <div class="pub-body">
+    <div class="pub-title"><span class="star" title="Selected publication">✦</span>Towards grain-scale modelling of the release of radioactive fission gas from oxide fuel. Part I: SCIANTIX </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Magni, A., Van Uffelen, P., Schubert, A., Luzzi, L.</div>
+    <div class="pub-venue">Nuclear Engineering and Technology &middot; 54 (8), pp. 2771-2782 &middot; <span class="pub-year">2022</span> <a class="doi" href="https://doi.org/10.1016/j.net.2022.02.011">doi:10.1016/j.net.2022.02.011</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">2</span>
+  <div class="pub-body">
+    <div class="pub-title">On the use of spectral algorithms for the prediction of short-lived volatile fission product release: Methodology for bounding numerical error </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L.</div>
+    <div class="pub-venue">Nuclear Engineering and Technology &middot; 54 (4), pp. 1195-1205 &middot; <span class="pub-year">2022</span> <a class="doi" href="https://doi.org/10.1016/j.net.2021.10.028">doi:10.1016/j.net.2021.10.028</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num">1</span>
+  <div class="pub-body">
+    <div class="pub-title">Physics-based modelling and validation of inter-granular helium behaviour in SCIANTIX </div>
+    <div class="pub-auth">Giorgi, R., Cechet, A., Cognini, L., Magni, A., Pizzocri, D., <strong>Zullo, G.</strong>, Schubert, A., Van Uffelen, P., Luzzi, L.</div>
+    <div class="pub-venue">Nuclear Engineering and Technology &middot; 54 (7), pp. 2367-2375 &middot; <span class="pub-year">2022</span> <a class="doi" href="https://doi.org/10.1016/j.net.2022.01.012">doi:10.1016/j.net.2022.01.012</a></div>
+  </div>
+</div><div class="subhead">Conference contributions</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Z3ST: A FEniCSx Framework for Multiscale Thermo-Mechanical Analysis with Automatic Differentiation <span class="pub-type">Talk</span></div>
+    <div class="pub-auth"><strong>Zullo, G.</strong></div>
+    <div class="pub-venue">FEniCS 2026 &middot; Paris, France (University of Chicago — John W. Boyer Center) &middot; <span class="pub-year">17–19 Jun 2026</span> <a class="doi" href="https://fenicsproject.org/fenics-2026/">link</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Live Demonstration of Z3ST: A FEniCSx Framework for Multiscale Thermo-Mechanical Analysis with Automatic Differentiation <span class="pub-type">Software demonstration</span></div>
+    <div class="pub-auth"><strong>Zullo, G.</strong></div>
+    <div class="pub-venue">FEniCS 2026 &middot; Paris, France (University of Chicago — John W. Boyer Center) &middot; <span class="pub-year">17–19 Jun 2026</span> <a class="doi" href="https://fenicsproject.org/fenics-2026/">link</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Advancements of multi-dimensional fuel performance codes by physics-based and machine-learning informed models <span class="pub-type">Poster</span></div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L., Barani, T., Michel, B., Bertolus, M., Scolaro, A., Lo Frano, R., Heikinheimo, J.</div>
+    <div class="pub-venue">SNETP Forum 2026 &middot; Madrid, Spain &middot; <span class="pub-year">25–27 Mar 2026</span> <a class="doi" href="https://snetp.eu/wp-content/uploads/2026/03/SNETP-Forum2026_Poster-exhibition_compressed.pdf">link</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Extended integral validation database of SCIANTIX and application to fuel fragmentation under RIA conditions </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Cappellari, E., Segala, A. G., Pizzocri, D., Van Uffelen, P., Luzzi, L.</div>
+    <div class="pub-venue">NuFuel 2025 &middot; Delft, The Netherlands &middot; <span class="pub-year">16–18 Sep 2025</span> <a class="doi" href="https://www.eera-jpnm.com/events/Nufuel2025/">link</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">A Generalized Spectral Algorithm for Fission Gas Diffusion: Implementation and Verification in SCIANTIX </div>
+    <div class="pub-auth">Zayat, A., <strong>Zullo, G.</strong>, Pizzocri, D.</div>
+    <div class="pub-venue">NuFuel 2025 &middot; Delft, The Netherlands &middot; <span class="pub-year">16–18 Sep 2025</span> <a class="doi" href="https://www.eera-jpnm.com/events/Nufuel2025/">link</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">A physics-based model for fuel fragmentation <span class="pub-type">Talk</span></div>
+    <div class="pub-auth">Pizzocri, D., Cappellari, E., <strong>Zullo, G.</strong>, Luzzi, L., Van Uffelen, P.</div>
+    <div class="pub-venue">2025 MRS Spring Meeting &amp; Exhibit (Materials Research Society) &middot; Seattle, WA, USA &middot; <span class="pub-year">9 Apr 2025</span> <a class="doi" href="https://www.mrs.org/meetings-events/annual-meetings/archive/meeting/presentations/view/2025-mrs-spring-meeting/2025-mrs-spring-meeting-4208065">link</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">A data assimilation methodology for automatic code development </div>
+    <div class="pub-auth">Pizzocri, D., Nicodemo, G., <strong>Zullo, G.</strong>, Cammi, A., Luzzi, L.</div>
+    <div class="pub-venue">TRANSURANUS Workshop &middot; Turin, Italy &middot; <span class="pub-year">2024</span> </div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Reduced order modelling of fission gas diffusion in SCIANTIX coupled to TRANSURANUS </div>
+    <div class="pub-auth">Di Gennaro, M., Pizzocri, D., <strong>Zullo, G.</strong>, Lorenzi, S., Cammi, A., Luzzi, L.</div>
+    <div class="pub-venue">TRANSURANUS Workshop &middot; Turin, Italy &middot; <span class="pub-year">2024</span> </div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">A digital twin for a separate effect experiment about inert gas behaviour </div>
+    <div class="pub-auth">Pizzocri, D., <strong>Zullo, G.</strong>, Wang, S.</div>
+    <div class="pub-venue">NuFuel 2023 &middot; Marseille, France &middot; <span class="pub-year">2023</span> </div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Reduced order modelling of fission gas diffusion in fuel performance codes </div>
+    <div class="pub-auth">Di Gennaro, M., Pizzocri, D., <strong>Zullo, G.</strong>, Lorenzi, S., Cammi, A., Luzzi, L.</div>
+    <div class="pub-venue">NuFuel 2023 &middot; Marseille, France &middot; <span class="pub-year">2023</span> </div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">A model for athermal fission gas release in SCIANTIX </div>
+    <div class="pub-auth">Pagani, A., Pizzocri, D., <strong>Zullo, G.</strong>, Van Uffelen, P., Luzzi, L.</div>
+    <div class="pub-venue">NuFuel 2023 &middot; Marseille, France &middot; <span class="pub-year">2023</span> </div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Chromia doped UO2 fuel: Modelling of chromium solubility and fission gas diffusivity in SCIANTIX </div>
+    <div class="pub-auth">Nicodemo, G., Pizzocri, D., <strong>Zullo, G.</strong>, Luzzi, L.</div>
+    <div class="pub-venue">NuFuel 2023 &middot; Marseille, France &middot; <span class="pub-year">2023</span> </div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">The SCIANTIX grain-scale code: Recent developments for high burnup fuels </div>
+    <div class="pub-auth">Pizzocri, D., Barani, T., Luzzi, L., Magni, A., <strong>Zullo, G.</strong></div>
+    <div class="pub-venue">IAEA Technical Meeting on Safety and Performance Aspects in the Development and Qualification of High Burnup Nuclear Fuels for Water-Cooled Reactors &middot; Vienna, Austria &middot; <span class="pub-year">Nov 2022</span> <a class="doi" href="https://inis.iaea.org/records/z92h0-zcn04">link</a></div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Thermochemical modelling of LiF-CsF-ThF mixtures for MSFR application </div>
+    <div class="pub-auth">Narvaez, J., <strong>Zullo, G.</strong></div>
+    <div class="pub-venue">Young Molten Salt Reactor (YMSR) Conference &middot; Lecco, Italy (Politecnico di Milano) &middot; <span class="pub-year">2022</span> </div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Coupling SCIANTIX and TRANSURANUS: Assessment of stable and radioactive fission gas behaviour </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Magni, A., Luzzi, L.</div>
+    <div class="pub-venue">NuFuel 2021 &middot; Bangor, UK &middot; <span class="pub-year">2021</span> </div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Coupling SCIANTIX and TRANSURANUS: Simulation of integral irradiation experiments focusing on fission gas behaviour in light water reactor conditions </div>
+    <div class="pub-auth">Pizzocri, D., Luzzi, L., Barani, T., Magni, A., <strong>Zullo, G.</strong>, Van Uffelen, P.</div>
+    <div class="pub-venue">International Workshop &#x27;Towards nuclear fuel modelling in the various reactor types across Europe&#x27; &middot; Online &middot; <span class="pub-year">2021</span> </div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Coupling TRANSURANUS with SCIANTIX: Simulation of the HATAC C1/C2 rod segments for the assessment of stable and radioactive fission gas release </div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Magni, A., Van Uffelen, P., Luzzi, L.</div>
+    <div class="pub-venue">International Workshop &#x27;Towards nuclear fuel modelling in the various reactor types across Europe&#x27; &middot; Online &middot; <span class="pub-year">2021</span> </div>
+  </div>
+</div><div class="subhead">Technical reports &amp; deliverables</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">D3.3 Procedure for input data transfer in OFFBEAT <a class="doi" href="https://hdl.handle.net/11311/1310486">link</a></div>
+    <div class="pub-auth">Verma, L., Clifford, I. (PSI), Scolaro, A. (EPFL), <strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L. (POLIMI), Jambrina, A. (VTT), Van Uffelen, P., Schubert, A., Soti, Z. (JRC)</div>
+    <div class="pub-venue">OperaHPC &middot; 18 Jul 2025</div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">D5.1: Results of the verification activities <a class="doi" href="https://hdl.handle.net/11311/1310490">link</a></div>
+    <div class="pub-auth">Guénot-Delahaie, I. (CEA), Barani, T. (CEA), Scolaro, A. (EPFL), Krstović, M. (EPFL), Sturm, K. J. X. (EPFL), Pizzocri, D. (POLIMI), <strong>Zullo, G. (POLIMI)</strong>, Zayat, A. (POLIMI), Luzzi, L. (POLIMI), Verma, L. (PSI), Clifford, I. (PSI), Horton, M. (UKNNL), Hinds, Z. (BANGOR), Rushton, M. (BANGOR), Arkoma, A. (VTT)</div>
+    <div class="pub-venue">OperaHPC &middot; 5 Nov 2025</div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">D3.2 Results of the fuel reference state calculations <a class="doi" href="https://hdl.handle.net/11311/1310482">link</a></div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Segala, A. G., Pizzocri, D., Luzzi, L. (POLIMI), Verma, L., Clifford, I. (PSI), Tidikas, A., Kaliatka, T. (LEI), Aragón, P., Feria, F. (CIEMAT)</div>
+    <div class="pub-venue">OperaHPC &middot; 9 Jul 2025</div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Review and selection of state-of-the-art models for advanced fuel performance analysis <a class="doi" href="https://hdl.handle.net/11311/1310483">link</a></div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L., Scolaro, A., Verma, L., Clifford, I.</div>
+    <div class="pub-venue">OperaHPC &middot; Deliverable D4.2, Jan 2025</div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Description of selected cases for validation</div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L., Barani, T., Feria, F., Van Uffelen, P., Schubert, A., Clifford, I., Verma, L., Scolaro, A., Vanyi, A. Sz.</div>
+    <div class="pub-venue">OperaHPC (Horizon Europe, GA 101061453) &middot; Milestone MS5, Apr 2024</div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Description of new meso-scale models and their implementation in fuel performance codes <a class="doi" href="https://hdl.handle.net/11311/1259438">link</a></div>
+    <div class="pub-auth">Magni, A., Di Gennaro, M., Pizzocri, D., <strong>Zullo, G.</strong>, Luzzi, L. (POLIMI), Lainet, M. (CEA), Schubert, A., Van Uffelen, P. (JRC)</div>
+    <div class="pub-venue">PATRICIA (Horizon 2020, GA 945077) &middot; Deliverable D5.2, pp. 1-46, Aug 2023</div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Final report on rod cladding failure during SGTR <a class="doi" href="https://hdl.handle.net/11311/1233279">link</a></div>
+    <div class="pub-auth"><strong>Zullo, G.</strong>, Pizzocri, D., Luzzi, L., Kremer, F., Arnold, N., Muellner, N., Zimmerl, R., Klouzal, J., Gumenyuk, D., Herranz, L. E., Iglesias, R., Cherubini, M., Giaccardi, L., Schubert, A., Van Uffelen, P., Bürger, B., Hózer, Z.</div>
+    <div class="pub-venue">R2CA (Horizon 2020, GA 847656) &middot; Deliverable D4.4, pp. 1-65, Feb 2023</div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Status and planned activities for the SCIANTIX code application to high burnup fuels <a class="doi" href="https://hdl.handle.net/11311/1278348">link</a></div>
+    <div class="pub-auth">Pizzocri, D., Barani, T., Magni, A., <strong>Zullo, G.</strong>, Luzzi, L.</div>
+    <div class="pub-venue">IAEA Technical Meeting Report (Safety and Performance Aspects in the Development and Qualification of High Burnup Nuclear Fuels for Water Cooled Reactors) &middot; 2022</div>
+  </div>
+</div>
+<div class="pub">
+  <span class="pub-num"></span>
+  <div class="pub-body">
+    <div class="pub-title">Fuel rod behaviour during LOCA transient — Final report</div>
+    <div class="pub-auth">Schubert, A., Kremer, F., Tidikas, A., Pizzocri, D., <strong>Zullo, G.</strong>, Klouzal, J., Ovdiienko, I., Feria, F., Van Uffelen, P.</div>
+    <div class="pub-venue">R2CA (Horizon 2020, GA 847656) &middot; Deliverable D3.6, pp. 1-36, Dec 2022</div>
+  </div>
+</div></div>
+</section>
+  
+<section id="talks" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">08 / invited</span>
+    <h2>Invited lectures<span class="sec-count">3</span></h2>
+  </div>
+  <div class="sec-body">
+<div class="entry">
+  <div class="entry-when">29 Mar 2026 – 4 Apr 2026</div>
+  <div class="entry-body">
+    <div class="entry-title">ESNMS 2026 — European School on Nuclear Materials Science</div>
+    <div class="entry-sub">Invited lecturer · Corsica, France</div>
+    <div class="entry-thesis">Lecturer (L15, CS3)</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">19–23 Jan 2026</div>
+  <div class="entry-body">
+    <div class="entry-title">OperaHPC Training School on Fuel Behaviour Simulation</div>
+    <div class="entry-sub">Invited lecturer · Milan, Italy</div>
+    <div class="entry-thesis">Lectures on SCIANTIX / fission gas behaviour; held in parallel with the TRANSURANUS training course</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">13–15 May 2024</div>
+  <div class="entry-body">
+    <div class="entry-title">SCIANTIX Workshop (in connection with the EERA-JPNM Pilot Project RODEO)</div>
+    <div class="entry-sub">Invited lecturer / tutorial · Lyon, France</div>
+    <div class="entry-thesis">Advanced model options and SCIANTIX hands-on tutorials</div>
+  </div>
+</div></div>
+</section>
+  
+<section id="teaching" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">09 / teaching</span>
+    <h2>Teaching</h2>
+  </div>
+  <div class="sec-body">
+<div class="entry">
+  <div class="entry-when">2024 – Present</div>
+  <div class="entry-body">
+    <div class="entry-title">Nuclear Design and Technology</div>
+    <div class="entry-sub">Teaching Assistant · course by Lelio Luzzi</div>
+    
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when"></div>
+  <div class="entry-body">
+    <div class="entry-title">Fission Gas Behaviour Modelling in Nuclear Fuel <a class="doi" href="https://www.pok.polimi.it/course/view.php?id=231">link</a></div>
+    <div class="entry-sub">Organiser and lecturer · POK — Polimi Open Knowledge</div>
+    <div class="entry-thesis">Output of the OperaHPC project (WP8, deliverable D8.3)</div><div class="entry-thesis">Physics-based, multi-scale modelling of fission gas behaviour in irradiated fuel using the open-source SCIANTIX code (English, ~5 h, EQF 6)</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">2023</div>
+  <div class="entry-body">
+    <div class="entry-title">Fission gas behaviour: SCIANTIX</div>
+    <div class="entry-sub">Lecturer / contributor · TRANSURANUS Training Course</div>
+    
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">2020</div>
+  <div class="entry-body">
+    <div class="entry-title">SCIANTIX Training Course</div>
+    <div class="entry-sub">Lecturer / contributor · R2CA project</div>
+    
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">2021</div>
+  <div class="entry-body">
+    <div class="entry-title">Heavy Metal Summer School <span class="pub-type">attended</span></div>
+    <div class="entry-sub">PATRICIA project · Mol, Belgium (SCK CEN)</div>
+  </div>
+</div></div>
+</section>
+  
+<section id="supervision" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">10 / mentoring</span>
+    <h2>Thesis supervision<span class="sec-count">14</span></h2>
+  </div>
+  <div class="sec-body">
+<div class="entry">
+  <div class="entry-when"><span class="ongoing">in progress</span></div>
+  <div class="entry-body">
+    <div class="entry-title">Alexander Destro</div>
+    <div class="entry-thesis"><span class="tbd">title to be defined</span></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when"><span class="ongoing">in progress</span></div>
+  <div class="entry-body">
+    <div class="entry-title">Davide Ferraro</div>
+    <div class="entry-thesis"><span class="tbd">title to be defined</span></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Jul 2023</div>
+  <div class="entry-body">
+    <div class="entry-title">Giacomo Petrosillo</div>
+    <div class="entry-thesis">Fission gas release during design basis accidents: Surrogate and physics-based models for conventional and meso-scale nuclear fuel codes <a class="doi" href="https://hdl.handle.net/10589/211357">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Oct 2023</div>
+  <div class="entry-body">
+    <div class="entry-title">Giovanni Nicodemo</div>
+    <div class="entry-thesis">Chromia-doped UO2 fuel: Engineering modelling of chromium solubility and fission gas diffusivity <a class="doi" href="https://hdl.handle.net/10589/210071">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Apr 2024</div>
+  <div class="entry-body">
+    <div class="entry-title">Arianna Pagani</div>
+    <div class="entry-thesis">An AI-enhanced model of athermal fission gas release in SCIANTIX <a class="doi" href="https://hdl.handle.net/10589/218541">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Jul 2024</div>
+  <div class="entry-body">
+    <div class="entry-title">Shuo Wang</div>
+    <div class="entry-thesis">A digital twin approach for helium diffusivity in UO2 nuclear fuel based on SCIANTIX <a class="doi" href="https://hdl.handle.net/10589/223205">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Oct 2024</div>
+  <div class="entry-body">
+    <div class="entry-title">Juan Rodríguez Ynyesto Sánchez</div>
+    <div class="entry-thesis">Assessment of advanced tools for 3D modelling of pellet-cladding mechanical interaction in nuclear fuel rods <a class="doi" href="https://hdl.handle.net/10589/226745">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Dec 2024</div>
+  <div class="entry-body">
+    <div class="entry-title">Elisa Cappellari</div>
+    <div class="entry-thesis">Towards physics-based description of fuel fragmentation <a class="doi" href="https://hdl.handle.net/10589/230930">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Apr 2025</div>
+  <div class="entry-body">
+    <div class="entry-title">Luca Farina</div>
+    <div class="entry-thesis">Extension of fuel performance simulation tools for innovative materials: TRISO and metallic fuel <a class="doi" href="https://hdl.handle.net/10589/235425">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Jul 2025</div>
+  <div class="entry-body">
+    <div class="entry-title">Aya Zayat</div>
+    <div class="entry-thesis">Automatic verification of SCIANTIX as stand-alone and as a module <a class="doi" href="https://hdl.handle.net/10589/240338">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Jul 2025</div>
+  <div class="entry-body">
+    <div class="entry-title">Andrea Giulia Segala</div>
+    <div class="entry-thesis">Extension and integral validation of the TRANSURANUS code coupled with SCIANTIX in reactivity-initiated accidents <a class="doi" href="https://hdl.handle.net/10589/239841">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Jul 2025</div>
+  <div class="entry-body">
+    <div class="entry-title">Ulisse Frattini</div>
+    <div class="entry-thesis">Mechanistic modelling and assessment of high-burnup structure porosity evolution <a class="doi" href="https://hdl.handle.net/10589/240202">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Jul 2025</div>
+  <div class="entry-body">
+    <div class="entry-title">Alessio Mattiuz</div>
+    <div class="entry-thesis">Generation and assessment of virtual microstructures of high-porosity ceramic fuel with Merope code <a class="doi" href="https://hdl.handle.net/10589/240175">thesis</a></div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">Dec 2025</div>
+  <div class="entry-body">
+    <div class="entry-title">Giuseppe Paiaro</div>
+    <div class="entry-thesis">Extension of OFFBEAT source code to support anisotropic material properties <a class="doi" href="https://hdl.handle.net/10589/247573">thesis</a></div>
+  </div>
+</div></div>
+</section>
+  
+<section id="service" class="section">
+  <div class="sec-head">
+    <span class="eyebrow">11 / service &amp; awards</span>
+    <h2>Academic service &amp; awards</h2>
+  </div>
+  <div class="sec-body"><div class="entry"><div class="entry-when">Peer review</div><div class="entry-body"><div class="entry-thesis">Annals of Nuclear Energy, Journal of Nuclear Materials, Nuclear Engineering and Design, Nuclear Engineering and Technology, Progress in Nuclear Energy</div></div></div>
+<div class="entry">
+  <div class="entry-when">2024-09</div>
+  <div class="entry-body">
+    <div class="entry-title">ENEN PhD Event &amp; Prize 2024 — Finalist <a class="doi" href="https://enen.eu/index.php/phd-events/phd-ep-year-2024/">link</a></div>
+    <div class="entry-thesis">Selection as finalist included support to attend the ENEN PhD Event (Sept 2024)</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-when">2025</div>
+  <div class="entry-body">
+    <div class="entry-title">AIN &amp; INYG — Italian PhD Nuclear Talent Award 2025 (winner, 3rd place) <a class="doi" href="https://www.energia.polimi.it/news/due-dottori-di-ricerca-del-dipartimento-di-energia-premiati-allitalian-phd-nuclear-talent-award-2025/">link</a></div>
+    
+  </div>
+</div></div>
+</section>
+
+  <footer>
+    Generated from a structured data source &middot; metrics as of Jun 2026 &middot;
+    last updated 2025-11.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var bubbles=document.querySelectorAll('.bubble');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  bubbles.forEach(function(b,i){
+    b.animate([{opacity:b.getAttribute('fill-opacity')*.6},{opacity:b.getAttribute('fill-opacity')*1.0},{opacity:b.getAttribute('fill-opacity')*.6}],
+      {duration:3200+i*420,iterations:Infinity,easing:'ease-in-out'});
+  });
+})();
+</script>
+</body>
+</html>
